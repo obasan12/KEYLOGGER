@@ -59,9 +59,6 @@ Continuous Screenshots: Video-style playback of screenshots for programs and web
 FTP Server: Screenshot and keylogger Logfile which contain senstive user information send to ftp server (Mobile/Web/System). Powerful ftp server also write in Core Visual C++.
 
 AutoStart : Keylogger has functionaility to auto execute on system bootup. It Insert entry on system startup program when it is running.
-
-AutoCopy : Keylogger has functionaility to auto copy in %appdata%/roaming/wpdnse/ folder.
-
 Keylogger.Zip Contain two Executable Files. (Sourcecode File Also Included)
 svchost.exe (Main Keylogger Processs)
 rundll33.exe (Capture Screenshot & send all Log and Screenshot to FTP Server (ftp://192.168.8.2:2121))
