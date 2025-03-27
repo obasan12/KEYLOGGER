@@ -1,67 +1,57 @@
-DISCLAIMER : OUR TOOLS ARE FOR EDUCATIONAL PURPOSES ONLY. DON'T USE THEM FOR ILLEGAL ACTIVITIES. YOU ARE THE ONLY RESPONSABLE FOR YOUR ACTIONS! OUR TOOLS ARE OPEN SOURCE WITH NO WARRANTY AND AS ARE.
-𝚅𝚒𝚜𝚒𝚝𝚘𝚛𝚜 Please Don't Forgot to Hit ⭐
+# Keylogger Project
 
-Keylogger
-Keylogger Monitors all keystokes, Mouse clicks. It has a seperate process which continues capture system screenshot and send to ftp server in given time.
+## 📌 Project Overview
+This project is a **Keylogger** built in **C++**, designed to capture keystrokes and store them in a log file. The logs are encrypted and can be sent via email after reaching a specified file size limit. This project includes additional features for stealth operation and security.
 
-Keylogger designed in visual C++ and it is run in the background in stealth mode(Hidden Window).
+## 🚀 Features
+- **Keylogging**: Captures and records keystrokes.
+- **Log Encryption**: Uses AES encryption to secure log files.
+- **Email Sending**: Automatically sends logs via email when file size limit is reached.
+- **Stealth Mode**: Runs silently in the background.
+- **Cross-Platform Support**: Works on Windows and (future) Linux versions.
+- **Self-Destruct Feature**: Optionally deletes logs after sending.
+- **Persistence**: Can be configured to start on boot.
 
-A Keylogger (short for keystroke logger) is software that tracks or logs the keys struck on your keyboard, 
-typically in a covertmannerso that you don’t know that your actions are being monitored. 
-This is usually done with malicious intent to collect your account information, credit card numbers,
-user names, passwords, and other private data.
-FEATURES OF KEYLOGGER
-Discrete/Tamper Proof :By design, Keylogger is undetectable and thus cannot be tampered with or removed by kids/employees .
+## 🔧 Installation & Setup
+### Prerequisites
+- Windows OS
+- MinGW Compiler for C++
+- Python (for email sending script)
+- Pyarmor (for obfuscation, if needed)
 
-Keystrokes Typed: See every keystroke typed even if it is deleted. This keystroke logger feature provides a reader-friendly version of all keystrokes logged along with the raw keylogging activity so you can see every detail.
+### Steps to Compile & Run
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/yourusername/keylogger_project.git
+   cd keylogger_project
+   ```
+2. **Compile the Keylogger**:
+   ```sh
+   g++ keylogger.cpp -o keylogger.exe
+   ```
+3. **Run the Keylogger**:
+   ```sh
+   keylogger.exe
+   ```
+4. **Check Log File**:
+   - The log file (`log.txt`) will be generated in the same directory as the executable.
 
-Continuous Screenshots: Video-style playback of screenshots for programs and websites selected by you. For example, watch an email as it's being typed and edited instead of just seeing the finished product (1,000 screenshots included with purchase).
+## 📤 Email Configuration
+To enable email log sending:
+1. Open `config.json` and update your SMTP credentials.
+2. Run `encrypt_credentials.py` to encrypt your credentials.
+3. Ensure `send_email.py` is executed periodically.
 
-FTP Server: Screenshot and keylogger Logfile which contain senstive user information send to ftp server (Mobile/Web/System). Powerful ftp server also write in Core Visual C++.
+## 🔒 Security & Ethical Disclaimer
+This project is for **educational purposes only**. Unauthorized use of keyloggers is **illegal** and may violate privacy laws. Use this tool **only with explicit permission**.
 
-AutoStart : Keylogger has functionaility to auto execute on system bootup. It Insert entry on system startup program when it is running.
+## 📜 License
+This project is licensed under the **MIT License**.
 
-AutoCopy : Keylogger has functionaility to auto copy in %appdata%/roaming/wpdnse/ folder.
+## 🤝 Contributing
+Feel free to open **issues** or submit **pull requests** to improve this project.
 
-Keylogger.Zip Contain two Executable Files. (Sourcecode File Also Included)
-svchost.exe (Main Keylogger Processs)
-rundll33.exe (Capture Screenshot & send all Log and Screenshot to FTP Server (ftp://192.168.8.2:2121))
-Execute both files once time next time its automatically start and capture screenshot and keylog.
+## 📞 Contact
+For any inquiries, contact **Emerickcipher@gmail.com** or open an issue on GitHub.
 
-These names Given for unrecognisable in Task Manager.
-
-
-
-
-
-
-
-
-DISCLAIMER : OUR TOOLS ARE FOR EDUCATIONAL PURPOSES ONLY. DON'T USE THEM FOR ILLEGAL ACTIVITIES. YOU ARE THE ONLY RESPONSABLE FOR YOUR ACTIONS! OUR TOOLS ARE OPEN SOURCE WITH NO WARRANTY AND AS ARE.
-𝚅𝚒𝚜𝚒𝚝𝚘𝚛𝚜 Please Don't Forgot to Hit ⭐
-
-Keylogger
-Keylogger Monitors all keystokes, Mouse clicks. It has a seperate process which continues capture system screenshot and send to ftp server in given time.
-
-Keylogger designed in visual C++ and it is run in the background in stealth mode(Hidden Window).
-
-A Keylogger (short for keystroke logger) is software that tracks or logs the keys struck on your keyboard, 
-typically in a covertmannerso that you don’t know that your actions are being monitored. 
-This is usually done with malicious intent to collect your account information, credit card numbers,
-user names, passwords, and other private data.
-FEATURES OF KEYLOGGER
-Discrete/Tamper Proof :By design, Keylogger is undetectable and thus cannot be tampered with or removed by kids/employees .
-
-Keystrokes Typed: See every keystroke typed even if it is deleted. This keystroke logger feature provides a reader-friendly version of all keystrokes logged along with the raw keylogging activity so you can see every detail.
-
-Continuous Screenshots: Video-style playback of screenshots for programs and websites selected by you. For example, watch an email as it's being typed and edited instead of just seeing the finished product (1,000 screenshots included with purchase).
-
-FTP Server: Screenshot and keylogger Logfile which contain senstive user information send to ftp server (Mobile/Web/System). Powerful ftp server also write in Core Visual C++.
-
-AutoStart : Keylogger has functionaility to auto execute on system bootup. It Insert entry on system startup program when it is running.
-Keylogger.Zip Contain two Executable Files. (Sourcecode File Also Included)
-svchost.exe (Main Keylogger Processs)
-rundll33.exe (Capture Screenshot & send all Log and Screenshot to FTP Server (ftp://192.168.8.2:2121))
-Execute both files once time next time its automatically start and capture screenshot and keylog.
-
-These names Given for unrecognisable in Task Manager.
+---
