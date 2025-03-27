@@ -22,7 +22,7 @@ This project is a **Keylogger** built in **C++**, designed to capture keystrokes
 ### Steps to Compile & Run
 1. **Clone the Repository**:
    ```sh
- https://github.com/obasan12/KEYLOGGER.git
+   https://github.com/obasan12/KEYLOGGER.git
    cd keylogger_project
    ```
 2. **Compile the Keylogger**:
