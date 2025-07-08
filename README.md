@@ -1,4 +1,4 @@
-⁶# Keylogger Project
+# Keylogger Project
 
 ## 📌 Project Overview
 This project is a **Keylogger** built in **C++**, designed to capture keystrokes and store them in a log file. The logs are encrypted and can be sent via email after reaching a specified file size limit. This project includes additional features for stealth operation and security.
