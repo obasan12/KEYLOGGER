@@ -45,7 +45,7 @@ To enable email log sending:
 ## 🔒 Security & Ethical Disclaimer
 This project is for **educational purposes only**. Unauthorized use of keyloggers is **illegal** and may violate privacy laws. Use this tool **only with explicit permission**.
 
-## 📜 License
+## License
 This project is licensed under the **MIT License**.
 
 ## 🤝 Contributing
