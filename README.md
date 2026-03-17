@@ -47,7 +47,6 @@ This project is for **educational purposes only**. Unauthorized use of keylogger
 
 ## License
 This project is licensed under the **MIT License**.
-
 ## 🤝 Contributing
 Feel free to open **issues** or submit **pull requests** to improve this project.
 
@@ -57,4 +56,4 @@ For any inquiries, contact **Emerickcipher@gmail.com** or open an issue on GitHu
 --
 
 
-coming
+
